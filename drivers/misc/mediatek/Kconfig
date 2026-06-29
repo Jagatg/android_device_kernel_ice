@@ -565,7 +565,7 @@ source "drivers/misc/mediatek/timer/Kconfig"
 # BSP.System - 2022.4.2 - add simtray status
 source "drivers/misc/mediatek/simtray/Kconfig"
 
-# Imported MiCode Out-of-Tree Modules
-source "drivers/misc/mediatek/fpsgo_cus/Kconfig"
-source "drivers/misc/mediatek/udc/Kconfig"
+# Imported MiCode Out-of-Tree Modules (Disabled since Kconfig definitions are absent)
+# source "drivers/misc/mediatek/fpsgo_cus/Kconfig"
+# source "drivers/misc/mediatek/udc/Kconfig"
 endmenu # Misc
