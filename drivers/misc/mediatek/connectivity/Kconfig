@@ -1,10 +1,22 @@
 config MTK_COMBO
 	tristate "MediaTek Connectivity Combo Chip Support"
+	select MTK_CONN_INFRA if y || m
 	help
 	  MTK connectivity combo chip driver for MT66xx
-	  This config
-	  is used to
-	  turn on/off connsys
+	  This config is used to turn on/off connsys
+
+# New internal infrastructure configurations mapping to your tree
+config MTK_CONN_INFRA
+	tristate "MediaTek Connectivity Infrastructure Support"
+	help
+	  Enables core connectivity infrastructure driver support (conninfra).
+
+config MTK_CONN_FEM
+	tristate "MediaTek Front-End Module (FEM) Support"
+	depends on MTK_COMBO
+	default y
+	help
+	  Enables core Front-End Module configurations (connfem).
 
 #
 # MTK Combo Chip Selection
@@ -16,40 +28,31 @@ choice
 	help
 	  This is used to select chip.
 	  When MTK_COMBO is y,
-	  we need to choose
-	  a chip.
+	  we need to choose a chip.
 
 config MTK_COMBO_CHIP_MT6620
 	bool "MT6620"
 	help
 	  this config is used to decided combo chip version
-	  in current platform
-	  is
-	  MT6620
+	  in current platform is MT6620
 
 config MTK_COMBO_CHIP_MT6628
 	bool "MT6628"
 	help
 	  this config is used to decided combo chip version
-	  in current platform
-	  is
-	  MT6628
+	  in current platform is MT6628
 
 config MTK_COMBO_CHIP_MT7668
 	bool "MT7668"
 	help
 	  this config is used to decided combo chip version
-	  in current platform
-	  is
-	  MT7668
+	  in current platform is MT7668
 
 config MTK_COMBO_CHIP_MT6630
 	bool "MT6630"
 	help
 	  this config is used to decided combo chip version
-	  in current platform
-	  is
-	  MT6630
+	  in current platform is MT6630
 
 config MTK_COMBO_CHIP_MT6632
 	bool "Mediatek MT6632 device driver support"
@@ -64,169 +67,127 @@ config MTK_COMBO_CHIP_CONSYS_6757
 	bool "MTK MT6757 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6757(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6757(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6763
 	bool "MTK MT6763 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6763(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6763(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6758
 	bool "MTK MT6758 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6758(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6758(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6759
 	bool "MTK MT6759 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6759(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6759(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6765
 	bool "MTK MT6765 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6765(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6765(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6761
 	bool "MTK MT6761 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6761(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6761(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_8167
 	bool "MTK MT8167 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT8167(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT8167(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_8168
 	bool "MTK MT8168 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-          MT8168(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT8168(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_3967
 	bool "MTK MT3967 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT3967(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT3967(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6771
 	bool "MTK MT6771 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6771(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6771(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6739
 	bool "MTK MT6739 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6739(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6739(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6768
 	bool "MTK MT6768 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6768(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6768(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6779
 	bool "MTK MT6779 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6779(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6779(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6781
 	bool "MTK MT6781 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6781(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6781(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6785
 	bool "MTK MT6785 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6785(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6785(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6833
 	bool "MTK MT6833 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6833(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6833(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6853
 	bool "MTK MT6853 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6853(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6853(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6873
 	bool "MTK MT6873 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6873(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6873(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6877
 	bool "MTK MT6877 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6877(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6877(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6885
 	bool "MTK MT6885 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6885(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6885(BT/WIFI/GPS/FM combo chip)
 
 config MTK_COMBO_CHIP_CONSYS_6893
 	bool "MTK MT6893 combo chip support"
 	help
 	  this config is used to decided SOC consys version
-	  in current platform
-	  is
-	  MT6893(BT/WIFI/GPS/FM combo chip)
+	  in current platform is MT6893(BT/WIFI/GPS/FM combo chip)
 
 endchoice
 
@@ -371,7 +332,7 @@ config MTK_CONN_LTE_IDC_SUPPORT
 menuconfig GPS
 	tristate "GPS drivers"
 	default n
-	---help---
+	help
 	  Say Y here for supporting GPS.
 
 config MTK_GPS_SUPPORT
@@ -398,8 +359,7 @@ config MTK_FMRADIO
 	tristate "MediaTek FMRadio driver"
 	depends on MTK_COMBO
 	help
-	  This config is used to choose
-	  if need to compile fmradio folder.
+	  This config is used to choose if need to compile fmradio folder.
 	  Will compile fmradio folder if set to 'y',
 	  otherwise will not compile fmradio folder.
 
@@ -407,8 +367,7 @@ config MTK_FM_CHIP
 	string "MTK FM CHIP"
 	depends on MTK_FMRADIO
 	help
-	  This config is used to choose
-	  which FM radio chip to use:
+	  This config is used to choose which FM radio chip to use:
 	  e.g. MT6627_FM, MT6580_FM, MT6630_FM,
 	  for control to use which platform code.
 
@@ -416,8 +375,7 @@ config MTK_FM_50KHZ_SUPPORT
 	bool "support MTK FM 50KHZ"
 	depends on MTK_FMRADIO
 	help
-	  This config is used to choose
-	  if need to support FM 50KHz step or not
+	  This config is used to choose if need to support FM 50KHz step or not
 	  for tune/seek/scan functions.
 	  Will support 50KHz step if set to 'y',
 	  otherwise will not support 50KHz step.
@@ -425,9 +383,8 @@ config MTK_FM_50KHZ_SUPPORT
 config MTK_MERGE_INTERFACE_SUPPORT
 	bool "support MTK MERGE INTERFACE"
 	help
-	  This config is used to control FM Audio
-	  path. FM audio path will use PCM/I2S merge
-	  interface is set to 'y',
+	  This config is used to control FM Audio path. 
+	  FM audio path will use PCM/I2S merge interface is set to 'y',
 	  otherwise merge interface is not used.
 
 config MTK_COMBO_CHIP_DEEP_SLEEP_SUPPORT
