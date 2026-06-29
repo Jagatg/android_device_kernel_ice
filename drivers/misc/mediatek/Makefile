@@ -204,3 +204,7 @@ obj-$(CONFIG_MTK_FREQ_HOPPING) += freqhopping/
 obj-$(CONFIG_MTK_TASK_TURBO) += task_turbo/
 # BSP.System - 2022.4.2 - add simtray status
 obj-y += simtray/
+
+# Imported MiCode Out-of-Tree Modules
+obj-$(CONFIG_MTK_FPSGO_CUS) += fpsgo_cus/
+obj-$(CONFIG_MTK_UDC)       += udc/
