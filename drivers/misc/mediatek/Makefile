@@ -111,9 +111,7 @@ endif
 obj-$(CONFIG_MTK_SMI) += smi/
 obj-$(CONFIG_MTK_SMI_VARIANT) += smi/
 obj-$(CONFIG_MTK_LOW_POWER_MODULE) += lpm/
-#ifneq ($(CONFIG_MTK_PLATFORM), "mt6771")
 obj-$(CONFIG_MTK_PERFORMANCE_MODULE) += performance/
-#endif
 obj-y += mmdvfs/
 obj-$(CONFIG_MTK_IOMMU_MISC) += iommu/
 obj-$(CONFIG_INTERCONNECT_MTK_MMQOS_COMMON) += mmqos/
@@ -127,7 +125,6 @@ obj-$(CONFIG_MACH_MT8167)+= power/
 endif
 
 obj-$(CONFIG_MTK_LEGACY_THERMAL) += thermal/
-#obj-$(CONFIG_THERMAL) += thermalv1/
 obj-$(CONFIG_MTK_PLAT_SRAM_FLAG) += debug_latch/
 obj-$(CONFIG_MTK_DEBUG_TRACER)	+= debug_tracer/
 obj-$(CONFIG_MEDIATEK_CACHE_API) += cache/
@@ -153,7 +150,6 @@ obj-$(CONFIG_MTK_CAM_CAL)   += cam_cal/
 obj-$(CONFIG_NFC_CHIP_SUPPORT) += nfc/
 obj-$(CONFIG_MTK_M4U) += m4u/
 obj-$(CONFIG_MTK_PSEUDO_M4U)   += pseudo_m4u/
-obj-y += pmic/
 obj-$(CONFIG_RT_REGMAP) += rt-regmap/
 obj-$(CONFIG_MTK_VIDEOCODEC_DRIVER) += videocodec/
 obj-$(CONFIG_MTK_FLASHLIGHT) += flashlight/
